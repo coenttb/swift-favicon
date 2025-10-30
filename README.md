@@ -1,5 +1,8 @@
 # swift-favicon
 
+[![CI](https://github.com/coenttb/swift-favicon/workflows/CI/badge.svg)](https://github.com/coenttb/swift-favicon/actions/workflows/ci.yml)
+![Development Status](https://img.shields.io/badge/status-active--development-blue.svg)
+
 Type-safe favicon serving for Swift web applications.
 
 ## Overview
@@ -8,11 +11,11 @@ swift-favicon provides a clean, type-safe API for serving favicons in Swift web 
 
 ## Features
 
-- **Type-safe routing** with bidirectional URL parsing via swift-url-routing
-- **Multiple format support**: ICO, PNG (multiple sizes), SVG, Apple Touch Icons
-- **HTML generation** for favicon meta tags
-- **Dependency injection** support via swift-dependencies
-- **Clean domain model** with separation of concerns
+- Type-safe routing with bidirectional URL parsing via swift-url-routing
+- Multiple format support: ICO, PNG (multiple sizes), SVG, Apple Touch Icons
+- HTML generation for favicon meta tags
+- Dependency injection support via swift-dependencies
+- Clean domain model with separation of concerns
 
 ## Installation
 
@@ -24,7 +27,7 @@ dependencies: [
 ]
 ```
 
-## Basic Usage
+## Quick Start
 
 ### Creating a Favicon Instance
 
@@ -38,7 +41,6 @@ let icons = Favicon.IconSet(
     png16: png16Data,
     png32: png32Data,
     png192: png192Data,
-    png512: png512Data,
     appleTouchIcon: appleTouchIconData
 )
 
@@ -83,7 +85,9 @@ let html = HTML {
 
 This generates appropriate `<link>` tags for all available favicon formats.
 
-## Supported Routes
+## Usage Examples
+
+### Supported Routes
 
 - `/favicon.ico` - Classic favicon format
 - `/icon.svg` - Scalable vector favicon
@@ -95,8 +99,6 @@ This generates appropriate `<link>` tags for all available favicon formats.
 - `/apple-touch-icon.png` - Apple Touch Icon (default)
 - `/apple-touch-icon-180x180.png` - Apple Touch Icon (180x180)
 - `/apple-touch-icon-precomposed.png` - Precomposed Apple Touch Icon
-
-## Advanced Usage
 
 ### Custom Base URL
 
@@ -110,27 +112,7 @@ let favicon = Favicon(
 )
 ```
 
-### Configuration Options
-
-```swift
-let configuration = Favicon.Configuration(
-    includeAppleTouchIcon: true,
-    colorScheme: Favicon.Configuration.ColorScheme(
-        primary: "#2196f3",
-        background: "#1976d2"
-    )
-)
-
-let favicon = Favicon(
-    router: Favicon.Route.Router(),
-    icons: icons,
-    configuration: configuration
-)
-```
-
-## Integration Examples
-
-### With Vapor
+### Integration with Vapor
 
 ```swift
 import Vapor
@@ -157,7 +139,7 @@ func routes(_ app: Application) throws {
 }
 ```
 
-### With Hummingbird
+### Integration with Hummingbird
 
 ```swift
 import Hummingbird
@@ -180,6 +162,16 @@ router.get("favicon.ico") { request in
 }
 ```
 
+## Related Packages
+
+- [swift-html](https://github.com/coenttb/swift-html) - Type-safe HTML generation
+- [swift-url-routing](https://github.com/pointfreeco/swift-url-routing) - Bidirectional URL routing
+- [swift-dependencies](https://github.com/pointfreeco/swift-dependencies) - Dependency injection
+
 ## License
 
 This package is licensed under the Apache License 2.0. See [LICENSE](LICENSE) for details.
+
+## Contributing
+
+Contributions are welcome. Please open an issue or pull request.
