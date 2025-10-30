@@ -1,5 +1,5 @@
 {
-  "originHash" : "ec4f4e4d4f4336e9841b635ac861a1f29c908dd3b5dc481c5fe3389743210903",
+  "originHash" : "4076945ebccc2ec7868588b34c1a2b632b33dcf18005a55b92267d0fbb2a597e",
   "pins" : [
     {
       "identity" : "combine-schedulers",
@@ -114,8 +114,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/coenttb/swift-html",
       "state" : {
-        "revision" : "a4fa9fa588e02a6864f9c9fea1f232aa36b10400",
-        "version" : "0.8.1"
+        "revision" : "9d1f05e70add1f9e19d856578a8a480ab2acdd7e",
+        "version" : "0.9.1"
       }
     },
     {
@@ -161,6 +161,33 @@
       "state" : {
         "revision" : "a8b7c5e0ed33d8ab8887d1654d9b59f2cbad529b",
         "version" : "1.18.7"
+      }
+    },
+    {
+      "identity" : "swift-svg",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/coenttb/swift-svg",
+      "state" : {
+        "revision" : "4f57d3592b5cd9b6239537a49a151d45c735bb01",
+        "version" : "0.1.0"
+      }
+    },
+    {
+      "identity" : "swift-svg-printer",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/coenttb/swift-svg-printer",
+      "state" : {
+        "revision" : "90761ac4d4b0ccf7f5707267b2435d021a13bb91",
+        "version" : "0.1.0"
+      }
+    },
+    {
+      "identity" : "swift-svg-types",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/coenttb/swift-svg-types",
+      "state" : {
+        "revision" : "068b920b3c742741b7df9e0a26cc23449cf9ef00",
+        "version" : "0.1.0"
       }
     },
     {
