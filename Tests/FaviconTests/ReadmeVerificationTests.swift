@@ -1,8 +1,10 @@
 import Testing
 import Favicon
+import HTML
 import Foundation
 import URLRouting
 import Dependencies
+import DependenciesTestSupport
 
 @Suite("README Verification")
 struct ReadmeVerificationTests {
@@ -133,5 +135,45 @@ struct ReadmeVerificationTests {
         #expect(favicon.contentType(for: .icon(.svg)) == "image/svg+xml")
         #expect(favicon.contentType(for: .icon(.png(.`16`))) == "image/png")
         #expect(favicon.contentType(for: .appleTouchIcon(size: nil)) == "image/png")
+    }
+
+    @Test("Example from README line 70-86: Generating HTML")
+    func exampleGeneratingHTML() throws {
+        // Example from README - setup favicon with some icon data
+        let icons = Favicon.IconSet(
+            ico: Data("ico".utf8),
+            svg: Data("svg".utf8),
+            png16: Data("16".utf8),
+            png32: Data("32".utf8)
+        )
+
+        let favicon = Favicon(
+            router: Favicon.Route.Router(),
+            icons: icons
+        )
+
+        // Use with swift-html to generate favicon meta tags
+        // @Dependency(\.favicon) var favicon
+        let head = withDependencies {
+            $0.favicon = favicon
+        } operation: {
+            Favicon.Head()
+        }
+
+        // Verify it compiles and generates HTML with favicon elements
+        let htmlString = try String(head)
+
+        // Should contain link tags for the icons we provided
+        #expect(htmlString.contains("<link"))
+        #expect(htmlString.contains("rel=\"icon\""))
+        #expect(htmlString.contains("favicon.ico"))
+        #expect(htmlString.contains("icon.svg"))
+        #expect(htmlString.contains("icon-16x16.png"))
+        #expect(htmlString.contains("icon-32x32.png"))
+
+        // Verify content types are correct
+        #expect(htmlString.contains("image/x-icon"))
+        #expect(htmlString.contains("image/svg+xml"))
+        #expect(htmlString.contains("image/png"))
     }
 }
