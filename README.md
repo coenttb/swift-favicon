@@ -164,9 +164,9 @@ router.get("favicon.ico") { request in
 
 ## Related Packages
 
-- [swift-html](https://github.com/coenttb/swift-html) - Type-safe HTML generation
-- [swift-url-routing](https://github.com/pointfreeco/swift-url-routing) - Bidirectional URL routing
-- [swift-dependencies](https://github.com/pointfreeco/swift-dependencies) - Dependency injection
+- [swift-html](https://github.com/coenttb/swift-html) - The Swift library for domain-accurate and type-safe HTML & CSS.
+- [swift-url-routing](https://github.com/pointfreeco/swift-url-routing) - A bidirectional router with more type safety and less fuss.
+- [swift-dependencies](https://github.com/pointfreeco/swift-dependencies) - A dependency management library inspired by SwiftUI's "environment."
 
 ## License
 
