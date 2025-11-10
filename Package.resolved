@@ -105,8 +105,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/coenttb/swift-html",
       "state" : {
-        "revision" : "283d8f7b5c493363b83f12476ad953872a6d9b31",
-        "version" : "0.11.0"
+        "revision" : "72e487f4c3cffe5d9f8eb76302430c7b8e2ea5ea",
+        "version" : "0.11.1"
       }
     },
     {
@@ -188,6 +188,15 @@
       "state" : {
         "revision" : "4799286537280063c85a32f09884cfbca301b1a1",
         "version" : "602.0.0"
+      }
+    },
+    {
+      "identity" : "swift-translating",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/coenttb/swift-translating",
+      "state" : {
+        "revision" : "579ab6bbf7df46428335c618278cb7d9d3d4c897",
+        "version" : "0.3.0"
       }
     },
     {
